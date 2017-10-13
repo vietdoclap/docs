@@ -17,3 +17,7 @@ www-data  7564  0.0  0.3 432244 12536 ?        S    14:31   0:00 /usr/sbin/apach
 www-data  7568  0.0  0.3 432244 12536 ?        S    14:31   0:00 /usr/sbin/apache2 -k start
 ......
 ```
+or
+```
+ps -ef | egrep '(httpd|apache2|apache)' | grep -v `whoami` | grep -v root | head -n1 | awk '{print $1}'
+```
